@@ -1,0 +1,5 @@
+<%= turbo_frame_tag "comments_#{dom_id(post)}" do %>
+  <% post.comments.each do |comment| %>
+    <%= render comment %>
+  <% end %>
+<% end %>

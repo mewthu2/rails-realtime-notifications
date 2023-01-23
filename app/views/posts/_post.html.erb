@@ -1,0 +1,13 @@
+<div id="<%= dom_id post %>">
+  <p>
+    <strong>Title:</strong>
+    <%= post.title %>
+  </p>
+  <p>
+    <strong>Body:</strong>
+    <%= post.body %>
+  </p>
+  <%= turbo_stream_from "comments_#{dom_id(post)}" %>
+  <%= render "comments/form", post: post, comment: Comment.new  %>
+  <%= render "comments/comments", post: post %>
+</div>

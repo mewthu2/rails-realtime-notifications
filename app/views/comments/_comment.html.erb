@@ -1,0 +1,4 @@
+<%= turbo_frame_tag dom_id(comment) do %>
+  <h6><%= comment.user.email %></h6>
+  <p><%= comment.body %></p>
+<% end %>

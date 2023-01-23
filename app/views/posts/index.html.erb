@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+<h1>Posts</h1>
+<%= render "layouts/session_manager" %>
+<div id="posts">
+  <div class="row">
+    <div class="col-6">
+      <% @posts.each do |post| %>
+        <%= post.title %>
+        <p>
+          <%= link_to "Show this post", post %>
+        </p>
+      <% end %>
+    </div>
+    <div class="col-4">
+      <%= turbo_frame_tag "notifications" do %>
+        <%= render "notifications/notifications", user: current_user %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= link_to "New post", new_post_path %>

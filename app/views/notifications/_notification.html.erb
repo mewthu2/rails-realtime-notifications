@@ -1,0 +1,8 @@
+<div>
+  <% if unread %>
+    <span>Unread</span>
+  <% end %>
+  <span><%= user.email %></span>
+  commented on 
+  <span><%= link_to post.title, post %></span>
+</div>
